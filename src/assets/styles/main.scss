@@ -1,0 +1,41 @@
+@import "card";
+@import "form";
+@import "modal";
+@import "error";
+
+:root {
+	--fonts-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+		"Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+		"Helvetica Neue", sans-serif;
+	--fonts-mono: Menlo, Monaco, "Lucida Console", "Liberation Mono",
+		"DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Courier New", monospace;
+}
+
+html {
+	font-family: var(--fonts-sans);
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+body {
+	position: relative;
+}
+
+main {
+	position: relative;
+	display: flex;
+	width: 100%;
+	max-width: 1200px;
+	height: 100%;
+	justify-content: center;
+	margin: auto;
+}
+
+#app {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	font-family: Avenir, Helvetica, Arial, sans-serif;
+	background: #efefef;
+	min-height: 100vh;
+}

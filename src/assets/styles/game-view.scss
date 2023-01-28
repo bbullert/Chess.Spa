@@ -1,0 +1,45 @@
+.game-view {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	width: 100%;
+	height: 100%;
+	align-items: center;
+	justify-content: center;
+	z-index: 1;
+}
+
+.game-layout {
+	position: relative;
+	display: flex;
+	height: 100%;
+
+	.game-layout-main {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.game-layout-side {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		width: 320px;
+		height: 100%;
+		padding: 0 16px;
+
+		.game-layout-side-menu {
+			position: relative;
+			display: flex;
+
+			button {
+				display: flex;
+				flex-grow: 1;
+				margin: 16px 8px;
+				justify-content: center;
+			}
+		}
+	}
+}

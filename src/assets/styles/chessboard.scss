@@ -1,0 +1,112 @@
+$margin: 44px;
+$fileSize: calc(100% / var(--chessboard-file-count));
+$rankSize: calc(100% / var(--chessboard-rank-count));
+
+.chessboard {
+	position: relative;
+	background: #ddd;
+	display: flex;
+	flex-grow: 1;
+	flex-wrap: wrap-reverse;
+	flex-direction: row;
+	cursor: var(--chess-piece-cursor);
+	box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+		rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+
+	div {
+		display: flex;
+	}
+
+	* {
+		-webkit-user-drag: none;
+		-khtml-user-drag: none;
+		-moz-user-drag: none;
+		-o-user-drag: none;
+		user-drag: none;
+
+		-webkit-user-select: none;
+		-khtml-user-select: none;
+		-moz-user-select: none;
+		-o-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+	}
+
+	.chessboard-square-label {
+		position: absolute;
+		pointer-events: none;
+		color: #222;
+		font-size: 14px;
+		font-weight: 500;
+		padding: 1px 8px;
+	}
+
+	.chessboard-square-file-label {
+		bottom: 0;
+		right: 0;
+	}
+
+	.chessboard-square-rank-label {
+		top: 0;
+		left: 0;
+	}
+
+	&.reversed {
+		flex-wrap: wrap;
+		direction: rtl;
+	}
+
+	.chessboard-square {
+		position: relative;
+		display: flex;
+		width: $fileSize;
+		height: $rankSize;
+		font-size: 12px;
+
+		&:not(.show-file-label) .chessboard-square-file-label {
+			display: none;
+		}
+
+		&.show-file-label .chessboard-square-file-label {
+			display: block;
+		}
+
+		&:not(.show-rank-label) .chessboard-square-rank-label {
+			display: none;
+		}
+
+		&.show-rank-label .chessboard-square-rank-label {
+			display: block;
+		}
+
+		&.chessboard-square-black {
+			background: #555;
+
+			&.show-file-label .chessboard-square-file-label {
+				color: #fff;
+			}
+
+			&.show-rank-label .chessboard-square-rank-label {
+				color: #ffff;
+			}
+		}
+
+		&.chessboard-square-indicator {
+			&::after {
+				content: "";
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				background: #999;
+				border-radius: 50%;
+				transform: scale(0.3);
+			}
+
+			&.chessboard-square-indicator-capture::after {
+				background: rgba(253, 96, 57, 0.5);
+				border-radius: 0;
+				transform: scale(1);
+			}
+		}
+	}
+}

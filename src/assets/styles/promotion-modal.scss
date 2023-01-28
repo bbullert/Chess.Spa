@@ -1,0 +1,11 @@
+.my-modal {
+	.promotion-modal-content {
+		display: flex;
+		flex-direction: row;
+		.chess-piece {
+			position: relative;
+			display: flex;
+			width: 100px;
+		}
+	}
+}
